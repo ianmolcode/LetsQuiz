@@ -11,14 +11,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <NavigationContainer>
-        <MyStack />
-      </NavigationContainer>
 
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
 
-      <StatusBar style="auto" />
-    </View>
   );
 }
 

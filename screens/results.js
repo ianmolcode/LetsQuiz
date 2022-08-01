@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 
-const Results = () => {
+const Results = ({navigation}) => {
     return (
 
         <View>
@@ -13,7 +13,7 @@ const Results = () => {
                 />
             </View>
             <View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=> navigation.navigate('Home')}>
                     <Text>Home</Text>
                 </TouchableOpacity>
             </View>
