@@ -8,7 +8,7 @@ const Home = ({ navigation }) => {
         <View style={styles.bannerContainer}>
             <Title />
             <View style={styles.container}>
-                <Image source={{ uri: 'https://img.freepik.com/free-vector/quiz-show-concept-illustration_114360-9771.jpg?w=996&t=st=1659210560~exp=1659211160~hmac=6d7e4c9d72acf2d5e90bc58563922033e11bedead374a8c40e46d15eff27c6a1', }}
+                <Image source={{ uri: 'https://products.ls.graphics/guuulp/images/Gaming.jpg', }}
                     style={styles.banner}
                     resizeMode="contain"
                 />
@@ -26,30 +26,26 @@ export default Home;
 
 const styles = StyleSheet.create({
     banner: {
-        height: 300,
+        height: 500,
         width: 350,
         
     },
     container: {
         justifyContent: 'center',
-        alignContent: 'center',
-        
-        flex: 1,
+        alignContent: 'center'
     },
     bannerContainer: {
         paddingTop: 50,
         paddingHorizontal: 20,
-        height: '100%',
-     
+        height: '100%'
         
     },
     button: {
         width: '100%',
         backgroundColor: '#57cc99',
         padding: 20,
-        borderRadius: 20,
+        borderRadius: 10,
         alignItems: 'center',
-        marginBottom: 100,
     },
     buttontext:{
         fontSize: 20,

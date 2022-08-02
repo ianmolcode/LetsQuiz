@@ -1,33 +1,66 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Title from '../components/titile';
 
-const Results = ({navigation}) => {
+const Result = ({ navigation, route }) => {
+    const { score } = route.params
+
+    const resultBanner = score > 10 ? "https://products.ls.graphics/guuulp/images/Everyday.jpg" : "https://cdni.iconscout.com/illustration/free/thumb/concept-about-business-failure-1862195-1580189.png"
     return (
-
-        <View>
-            <Text>Results are here</Text>
-            <View style={styles.container}>
-                <Image source={{ uri: 'https://img.freepik.com/free-vector/quiz-show-concept-illustration_114360-9771.jpg?w=996&t=st=1659210560~exp=1659211160~hmac=6d7e4c9d72acf2d5e90bc58563922033e11bedead374a8c40e46d15eff27c6a1', }}
+        <View style={styles.container}>
+            <Title titleText='RESULTS' />
+            <Text style={styles.scoreValue}>{score}</Text>
+            <View style={styles.bannerContainer}>
+                <Image
+                    source={{
+                        uri: resultBanner,
+                    }}
                     style={styles.banner}
                     resizeMode="contain"
                 />
             </View>
-            <View>
-                <TouchableOpacity onPress={()=> navigation.navigate('Home')}>
-                    <Text>Home</Text>
-                </TouchableOpacity>
-            </View>
-
+            <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
+                <Text style={styles.buttonText}>GO TO HOME</Text>
+            </TouchableOpacity>
         </View>
+    );
+};
 
-    )
-}
 
-export default Results;
+
+export default Result;
 
 const styles = StyleSheet.create({
     banner: {
         height: 300,
-        width: 300
+        width: 300,
     },
-})
+    bannerContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+    },
+    container: {
+        paddingTop: 40,
+        paddingHorizontal: 20,
+        height: '100%',
+    },
+    button: {
+        width: '100%',
+        backgroundColor: '#1A759F',
+        padding: 16,
+        borderRadius: 16,
+        alignItems: 'center',
+        marginBottom: 30,
+    },
+    buttonText: {
+        fontSize: 24,
+        fontWeight: '600',
+        color: 'white',
+    },
+    scoreValue: {
+        fontSize: 24,
+        fontWeight: '800',
+        alignSelf: 'center'
+    }
+});
